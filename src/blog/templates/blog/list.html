@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% for obj in objs %}
+
+<div class="card">
+    <div class="card-body">
+        <a href="/blog/view/{{ obj.slug }}">
+            <h3>{{ obj.title }}</h3>
+        </a>
+        <p>{{ obj.content }}</p>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

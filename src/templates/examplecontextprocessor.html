@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+<ul>
+    <li>{{ user }}</li>
+    <li>{{ user.is_authenticated }}</li>
+    <li>{{ request.user }}</li>
+    <li>{{ request.path }}</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<h3>This is the content on {{ header }}</h3>
+{% if user.is_authenticated %}
+<h3>User is logged in</h3>
+{% endif %}
+
+{% endblock %}
