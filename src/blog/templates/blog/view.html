@@ -6,7 +6,17 @@
 
 {% block content %}
 
+{% if obj %}
+
 <h3>{{ obj.title }}</h3>
 <p>{{ obj.content }}</p>
 
+<a href="/blog/edit/{{ obj.slug }}" class="btn btn-primary">Edit</a>
+<a href="/blog/del/{{ obj.slug }}" class="btn btn-danger">Delete</a>
+
+{% else %}
+
+<a href="/blog/list" class="btn btn-primary">Go to blog list</a>
+
+{% endif %}
 {% endblock %}

@@ -9,15 +9,30 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <title>Django-Blog</title>
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h1 class="text-center">Django Blog</h1>
-            <h5 class="text-right">{{ user }}</h5>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a href="/" class="navbar-brand">
+                    <h2 class="text-center">Django Blog</h2>
+                </a>
+                <div class="navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/blog/list" class="nav-link">Blogs</a></li>
+                        <li class="nav-item"><a href="/blog/new" class="nav-link">New Blog</a></li>
+                        <li class="nav-item"><a href="/site-admin" class="nav-link">Admin</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"></a></li>
+                    </ul>
+                    <span class="navbar-text">
+                        Logged in as
+                        <h5 class="text-right">{{ user }}</h5>
+                    </span>
+                </div>
+            </nav>
             {% block header %}
             {% endblock %}
         </header>
